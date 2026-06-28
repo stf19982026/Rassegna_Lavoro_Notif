@@ -17,12 +17,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libsqlite3-dev lldb lld cmake
 
-      # Modificato: Usiamo l'azione mantenuta dalla community che sostituisce quella vecchia
+      # Corretto: Il nome esatto del repository è ArtemSBulgakov
       - name: Compila APK con Buildozer Action
-        uses: Action-Android/buildozer-action@v1
+        uses: ArtemSBulgakov/buildozer-action@v1
         with:
           command: buildozer android release
-          workdir: .
+          repository_root: .
 
       - name: Carica come artifact
         uses: actions/upload-artifact@v4
